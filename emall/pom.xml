@@ -18,6 +18,8 @@
         <module>pc</module>
         <module>wap</module>
         <module>user</module>
+        <module>thirdpart</module>
+        <module>merchant</module>
     </modules>
 
     <properties>

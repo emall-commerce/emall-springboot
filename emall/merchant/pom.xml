@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.emall.thirdpart</groupId>
-    <artifactId>thirdpart</artifactId>
+    <groupId>com.emall.merchant</groupId>
+    <artifactId>merchant</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <packaging>jar</packaging>
 
     <parent>
         <groupId>com.emall.emall</groupId>
@@ -15,9 +15,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <packaging>jar</packaging>
 
     <dependencies>
+        <!--基础包-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -59,5 +59,4 @@
             </resource>
         </resources>
     </build>
-
 </project>

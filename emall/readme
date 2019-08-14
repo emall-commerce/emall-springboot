@@ -8,6 +8,34 @@ consul: 8500/tcp
 
 
 框架说明
+sppringcloud Greenwich.RELEASE 版本
+注册中心使用consul
+配置中心：暂不需要
+
+开发说明：
+  redis、consul、MySQL已在阿里云上部署服务
+  商城用户直接用user
+  后台用户添加前缀 back
+  商户添加前缀  merchant
+  数据库命名规范统一下划线分隔
+  后台接口开发命名规范统一驼峰式
+  每个独立的项目单独操作一个数据库
+  交互说明：
+    emall-wap/pc 提供移动端/PC端客户首页信息、商品分类、品牌、商品等信息
+        emall-wap 通过fegin请求调用 goods 查询商品信息
+        emall-wap 通过fegin请求调用 user 查询用户信息
+        emall-wap 通过fegin请求调用 order 进行下单
+    emall-order 提供订单下单服务，订单支付服务，要保证订单的幂等性，支付幂等性
+        emall-order 调用thirdpart获取支付相关逻辑
+        emall-order 调用good 获取商品库存信息 -- 若出现抢购，建议通过redis实现
+    emall-manager 内部人员使用。维护商户、后台用户等相关信息
+        emall-manager 调用user获取商城用户信息、后台用户信息，
+        emall-manager 调用merchant获取商户信息
+        emall-manager 通过商城用户或商户信息或商品信息调用emall-order获取订单信息
+    emall-user 维护商户merchant_user，后台用户back_user，商城用户mall_user 信息，并提供登录、修改密码，注销，冻结等功能
+    emall-gate 一个网关，为了拦截，转发，限流等相关操作控制
+
+
 
 - ├── emall-common -- 公共模块
 - ├── emall-gate -- 网关，所有接口访问入口
@@ -15,7 +43,7 @@ consul: 8500/tcp
 - ├── emall-manage -- 内管服务
 - ├── emall-order -- 订单服务
 - ├── emall-pc -- pc 端服务，提供给pc端使用
-- ├── emall-thirdpart -- 调用第三方服务使用
+- ├── emall-thirdpart -- 调用第三方服务使用,目前暂定接入支付宝支付，微信支付，接入短信平台--阿里云个人短信(暂时)
 - ├── emall-user -- 统一用户体系中心
 - ├── emall-wap -- 手机端使用服务
 
