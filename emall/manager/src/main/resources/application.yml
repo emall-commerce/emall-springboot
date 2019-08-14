@@ -1,18 +1,18 @@
-##emall-wap##
+##emall-manager##
 server:
-  port: 8800
+  port: 8807
 spring:
   application:
-    name: emall-wap
-# 注册中心待配置
-#  cloud:
-#    consul:
-#      host: 172.18.107.56
-#      port: 8500
-#      discovery:
-#        healthCheckPath: /health
-#        healthCheckInterval: 15s
-#        instance-id: id-scb-sysAdmin
+    name: emall-manager
+# 注册中心待配置 请在本地启动
+  cloud:
+    consul:
+      host: http://127.0.0.1
+      port: 8500
+      discovery:
+        healthCheckPath: /health
+        instance-id: id-emall-manager
+        health-check-interval: 10s
   jackson:
     default-property-inclusion: ALWAYS
     time-zone: GMT+8

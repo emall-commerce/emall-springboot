@@ -6,13 +6,13 @@
 
     <groupId>com.emall.manager</groupId>
     <artifactId>manager</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
 
     <parent>
-        <groupId>com.emall.emall</groupId>
+        <groupId>com.emall</groupId>
         <artifactId>emall</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
 
     <packaging>jar</packaging>
@@ -24,14 +24,23 @@
         </dependency>
         <!--引入公共包-->
         <dependency>
-            <groupId>com.emall.common</groupId>
-            <artifactId>common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>com.emall</groupId>
+            <artifactId>emall-common</artifactId>
+            <version>1.0.0</version>
         </dependency>
         <!-- 增加spring-boot-actuator是为了访问/health 路径来判断服务是否健康 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--服务发现依赖 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-consul</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
         </dependency>
     </dependencies>
 

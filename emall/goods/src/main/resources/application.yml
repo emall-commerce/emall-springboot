@@ -1,9 +1,9 @@
-##emall-wap##
+##emall-goods##
 server:
-  port: 8801
+  port: 8808
 spring:
   application:
-    name: emall-wap
+    name: emall-goods
 # 注册中心待配置 请在本地启动
   cloud:
     consul:
@@ -11,7 +11,7 @@ spring:
       port: 8500
       discovery:
         healthCheckPath: /health
-        instance-id: id-emall-wap
+        instance-id: id-emall-goods
         health-check-interval: 10s
   jackson:
     default-property-inclusion: ALWAYS

@@ -3,18 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <packaging>pom</packaging>
-    <groupId>com.emall.common</groupId>
-    <artifactId>common</artifactId>
-    <version>1.0-SNAPSHOT</version>
-
     <parent>
-        <groupId>com.emall.emall</groupId>
+        <groupId>com.emall</groupId>
         <artifactId>emall</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
-
+    <artifactId>emall-common</artifactId>
+    <packaging>jar</packaging>
     <dependencies>
         <!--引入hutool工具类-->
         <dependency>
@@ -38,5 +33,11 @@
             <artifactId>spring-web</artifactId>
             <scope>compile</scope>
         </dependency>
+        <!-- 增加spring-boot-actuator是为了访问/health 路径来判断服务是否健康 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
     </dependencies>
-</project>
+
+  </project>
