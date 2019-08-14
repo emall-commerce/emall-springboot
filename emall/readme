@@ -5,7 +5,16 @@ redis : 6379/tcp  配置文件/etc/redis.conf 密码  190814  配置文件启动
 数据库：3306/tcp
 consul: 8500/tcp
 
+xshell连接地址： 120.79.213.244  root  Java@2018
+jar包地址：    /appdata/emall
+日志地址 ：    /appdata/logs
 
+
+关于consul:  linux安装路径 /usr/local/bin
+    启动命令：在生产路径下 consul agent -dev  -client 0.0.0.0 -ui &
+    consul agent -server  -client 0.0.0.0
+    ./consul agent -dev -ui -node=consul-dev -client=0.0.0.0
+查询服务信息地址：http://120.79.213.244:8500/ui/dc1/services
 
 框架说明
 sppringcloud Greenwich.RELEASE 版本

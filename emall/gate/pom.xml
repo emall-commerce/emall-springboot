@@ -28,7 +28,13 @@
             <artifactId>common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <!-- 增加spring-boot-actuator是为了访问/health 路径来判断服务是否健康 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
     </dependencies>
+
 
 
     <build>
