@@ -1,0 +1,30 @@
+
+阿里云防火墙已开放端口
+redis : 6379/tcp  配置文件/etc/redis.conf 密码  190814  配置文件启动 redis-server /etc/redis.conf & 若云服务器重启，redis自动启动可能会非配置文件启动
+网关：8800/tcp
+数据库：3306/tcp
+consul: 8500/tcp
+
+
+
+框架说明
+
+- ├── emall-common -- 公共模块
+- ├── emall-gate -- 网关，所有接口访问入口
+- ├── emall-goods -- 商品维护微服务
+- ├── emall-manage -- 内管服务
+- ├── emall-order -- 订单服务
+- ├── emall-pc -- pc 端服务，提供给pc端使用
+- ├── emall-thirdpart -- 调用第三方服务使用
+- ├── emall-user -- 统一用户体系中心
+- ├── emall-wap -- 手机端使用服务
+
+
+框架说明
+强制
+    1、所有访问入口均通过网关
+    2、所有返回参数都必须是emall-common BaseRes
+
+建议：
+    1、common包下有相关公共使用工具类，建议直接使用
+    2、针对分页参数，请求参数，建议统一使用一个类对象
