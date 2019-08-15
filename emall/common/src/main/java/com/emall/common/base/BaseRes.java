@@ -8,7 +8,7 @@ import lombok.Data;
  * @Desc: 基础返回类
  */
 @Data
-public class BaseResponse {
+public class BaseRes {
 
     /**
      * 返回编码
@@ -25,4 +25,14 @@ public class BaseResponse {
      */
     private Object data;
 
+    public BaseRes(Object data) {
+        this.retCode = ReturnConstant.SUCCESS_CODE;
+        this.retMsg = ReturnConstant.SUCCESS_MSG;
+        this.data = data;
+    }
+
+    public BaseRes() {
+        this.retCode = ReturnConstant.SUCCESS_CODE;
+        this.retMsg = ReturnConstant.SUCCESS_MSG;
+    }
 }

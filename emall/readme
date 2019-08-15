@@ -7,7 +7,7 @@ consul: 8500/tcp
 
 xshell连接地址： 120.79.213.244  root  Java@2018
 jar包地址：    /appdata/emall
-日志地址 ：    /appdata/logs
+日志地址 ：    /logs/emall-项目名
 
 
 关于consul:  linux安装路径 /usr/local/bin

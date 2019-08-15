@@ -1,7 +1,7 @@
 package com.emall.wap.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("hello")
+@Slf4j
 public class HelloController {
-    Logger logger = LoggerFactory.getLogger(HelloController.class);
 
     @GetMapping("/say")
     public String sayHelloWorld(@RequestParam String name) {
-        logger.info("测试日志【{}】", name);
-        logger.error("测试错误日志【{}】", name);
+      log.error("测试error log【{}】", name);
+      log.info("测试info log【{}】", name);
         return "hello " + name;
     }
 }

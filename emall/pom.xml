@@ -33,10 +33,6 @@
         <netflix.version>2.1.1.RELEASE</netflix.version>
         <!-- zuul -->
         <zuul.version>2.1.4</zuul.version>
-
-        <!-- slf4j -->
-        <slf4j.log.version>1.7.26</slf4j.log.version>
-
         <jedis.version>3.0.1</jedis.version>
 
     </properties>

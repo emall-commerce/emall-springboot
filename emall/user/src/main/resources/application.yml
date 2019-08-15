@@ -29,9 +29,15 @@ spring:
   #------------DruidDataSource config --------------------------------
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url:jdbc: mysql://xiaoxia1.mysql.rds.aliyuncs.com:3306/xiaoxiaodemo?zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://xiaoxia1.mysql.rds.aliyuncs.com:3306/emall_user?zeroDateTimeBehavior=convertToNull
     username: xiaoxiao
     password: Java@2018
+
+mybatis-plus:
+  # 配置扫描xml
+  mapper-locations: classpath:com/emall/wap/mapper/xml/*.xml
+  # 实体扫描，多个package用逗号或者分号分隔
+  type-aliases-package: com.emall.wap.mapper
 
 
 

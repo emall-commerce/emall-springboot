@@ -6,7 +6,7 @@ package com.emall.common.base;
  * @Desc: 基础请求类
  */
 // TODO 待完成
-public class BaseRequest {
+public class BaseReq {
 
 
 }
