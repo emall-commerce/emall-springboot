@@ -19,9 +19,17 @@ public class GenerateCodeS {
 
     public static GeneratorCodeDTO buildGeneratorCodeDTO() {
         GeneratorCodeDTO generatorCodeDTO = new GeneratorCodeDTO();
+//        packageConfig.setParent("com.emall.wap");
+//        packageConfig.setController("controller");
+//        packageConfig.setService("service");
+//        packageConfig.setServiceImpl("service.impl");
+//        packageConfig.setMapper("mapper");
+//        packageConfig.setEntity("entity");
+//        packageConfig.setXml("mapper.xml");
+
         /** 父包 */
-        generatorCodeDTO.setParentPackage("com.lxzl.risk.system.business")
-                .setModulePackage("com.lxzl.risk.system")
+        generatorCodeDTO.setParentPackage("com.emall.wap")
+                .setModulePackage("com.emall.wap")
                 /** 实体类path */
                 .setEntityPath("/lxzl-risk-system-dataaccess/src/main/java/com/lxzl/risk/system/business")
                 /** mapper类path */
