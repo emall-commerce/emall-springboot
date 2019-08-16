@@ -87,7 +87,7 @@ public class GenerateCode extends AbstractTemplateEngine {
         packageConfig.setXml("mapper.xml");
         autoGenerator.setPackageInfo(packageConfig);
 
-        String templatePath = "/templates/mapper-mall.xml.ftl";
+        String templatePath = "/backtemple/mapper-mall.xml.ftl";
 
         // 自定义输出配置
         List<FileOutConfig> focList = new ArrayList<>();
