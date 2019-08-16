@@ -15,4 +15,5 @@ import ${package.Entity}.${entity};
 @Mapper
 public interface ${table.mapperName} extends BaseMapper<${entity}> {
 
+
 }

@@ -13,4 +13,12 @@
         <result column="status_flag" property="statusFlag" />
     </resultMap>
 
+
+    <insert id="insert" >
+
+    </insert>
+
+    <update id="updateById"></update>
+    <select id="getEmallUserList" resultMap="BaseResultMap"></select>
+
 </mapper>

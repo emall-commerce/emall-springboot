@@ -17,7 +17,7 @@ import java.io.Serializable;
 @TableName("emall_user")
 public class EmallUser implements Serializable {
 
-private static final long serialVersionUID=1L;
+    private static final long serialVersionUID = 1L;
 
     /**
      * 主键
@@ -55,7 +55,6 @@ private static final long serialVersionUID=1L;
      */
     private String statusFlag;
 
-
     public Integer getId() {
         return id;
     }
@@ -63,7 +62,6 @@ private static final long serialVersionUID=1L;
     public void setId(Integer id) {
         this.id = id;
     }
-
     public String getCreateBy() {
         return createBy;
     }
@@ -71,7 +69,6 @@ private static final long serialVersionUID=1L;
     public void setCreateBy(String createBy) {
         this.createBy = createBy;
     }
-
     public String getUpdateBy() {
         return updateBy;
     }
@@ -79,7 +76,6 @@ private static final long serialVersionUID=1L;
     public void setUpdateBy(String updateBy) {
         this.updateBy = updateBy;
     }
-
     public LocalDateTime getCreateDate() {
         return createDate;
     }
@@ -87,7 +83,6 @@ private static final long serialVersionUID=1L;
     public void setCreateDate(LocalDateTime createDate) {
         this.createDate = createDate;
     }
-
     public LocalDateTime getUpdateDate() {
         return updateDate;
     }
@@ -95,7 +90,6 @@ private static final long serialVersionUID=1L;
     public void setUpdateDate(LocalDateTime updateDate) {
         this.updateDate = updateDate;
     }
-
     public String getDeleteFlag() {
         return deleteFlag;
     }
@@ -103,7 +97,6 @@ private static final long serialVersionUID=1L;
     public void setDeleteFlag(String deleteFlag) {
         this.deleteFlag = deleteFlag;
     }
-
     public String getStatusFlag() {
         return statusFlag;
     }
@@ -129,13 +122,13 @@ private static final long serialVersionUID=1L;
     @Override
     public String toString() {
         return "EmallUser{" +
-        "id=" + id +
-        ", createBy=" + createBy +
-        ", updateBy=" + updateBy +
-        ", createDate=" + createDate +
-        ", updateDate=" + updateDate +
-        ", deleteFlag=" + deleteFlag +
-        ", statusFlag=" + statusFlag +
+            "id=" + id +
+            ", createBy=" + createBy +
+            ", updateBy=" + updateBy +
+            ", createDate=" + createDate +
+            ", updateDate=" + updateDate +
+            ", deleteFlag=" + deleteFlag +
+            ", statusFlag=" + statusFlag +
         "}";
     }
 }

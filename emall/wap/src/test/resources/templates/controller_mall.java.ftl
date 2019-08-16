@@ -32,7 +32,7 @@ public class ${table.controllerName} {
     */
     @ResponseBody
     @PostMapping("/page")
-    public BaseRes pageList(IPage<${entity}> req){
+    public BaseRes pageList(@RequestBody IPage<${entity}> req){
         return new BaseRes(targetService.page(req));
     }
 

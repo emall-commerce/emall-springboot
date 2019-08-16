@@ -1,6 +1,6 @@
 package com.emall.common.util;
 
-import org.apache.commons.lang.StringUtils;
+import io.micrometer.core.instrument.util.StringUtils;
 
 /**
  * @ClassName : DqBaseUtils

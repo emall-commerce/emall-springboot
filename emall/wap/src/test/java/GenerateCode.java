@@ -1,9 +1,15 @@
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
+import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
+import com.baomidou.mybatisplus.generator.config.builder.ConfigBuilder;
+import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.AbstractTemplateEngine;
+import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -14,13 +20,12 @@ import java.util.Map;
 public class GenerateCode extends AbstractTemplateEngine {
     private static final String AUTHOR = "xiaoxiao";
     // 多张表使用逗号分隔
-    private static final  String[]  tables = new String[]{"emall_user"};
+    private static final String[] tables = new String[]{"emall_user"};
 
     /**
-     *
+     * @param args
      * @Title: main
      * @Description: 生成
-     * @param args
      */
     public static void main(String[] args) {
         AutoGenerator autoGenerator = new AutoGenerator();
@@ -60,29 +65,59 @@ public class GenerateCode extends AbstractTemplateEngine {
                 .setInclude(tables) // 需要生成的表
                 .setEntityLombokModel(false)
                 .setEntityColumnConstant(true);
-
-
         autoGenerator.setStrategy(strategyConfig);
 
         // 模板配置
         TemplateConfig templateConfig = new TemplateConfig();
-        templateConfig.setController("/templates/controller_mall.java");
-        templateConfig.setMapper("/templates/mapper_mall.java");
+//        templateConfig.setController("/templates/controller_mall.java");
+//        templateConfig.setMapper("/templates/mapper_mall.java");
+//        templateConfig.setXml("/templates/mapper_mall.xml");
+//        templateConfig.setService("/templates/service_mall.xml");
+//        templateConfig.setServiceImpl("/templates/serviceImpl_mall.xml");
         autoGenerator.setTemplate(templateConfig);
 
         // 包配置
-        PackageConfig pc = new PackageConfig();
-        pc.setParent("com.emall.wap");
-        pc.setController("controller");
-        pc.setService("service");
-        pc.setServiceImpl("service.impl");
-        pc.setMapper("mapper");
-        pc.setEntity("entity");
-        pc.setXml("mapper.xml");
-        autoGenerator.setPackageInfo(pc);
+        PackageConfig packageConfig = new PackageConfig();
+        packageConfig.setParent("com.emall.wap");
+        packageConfig.setController("controller");
+        packageConfig.setService("service");
+        packageConfig.setServiceImpl("service.impl");
+        packageConfig.setMapper("mapper");
+        packageConfig.setEntity("entity");
+        packageConfig.setXml("mapper.xml");
+        autoGenerator.setPackageInfo(packageConfig);
+
+        String templatePath = "/templates/mapper-mall.xml.ftl";
+
+        // 自定义输出配置
+        List<FileOutConfig> focList = new ArrayList<>();
+        // 自定义配置会被优先输出
+        focList.add(new FileOutConfig(templatePath) {
+            @Override
+            public String outputFile(TableInfo tableInfo) {
+                // 自定义输出文件名
+                return System.getProperty("user.dir")+"wap\\src\\main\\java";
+//                return System.getProperty("user.dir") + "/src/main/resources/mapper/" //  + pc.getModuleName() 注释掉mapper.后要输入的
+//                        + "/" + tableInfo.getEntityName() + "Mapper"+ StringPool.DOT_XML;
+            }
+        });
+        InjectionConfig injectionConfig = new InjectionConfig() {
+            @Override
+            public void initMap() {
+            }
+        };
+        injectionConfig.setFileOutConfigList(focList);
+        autoGenerator.setCfg(injectionConfig);
+
+        ConfigBuilder configBuilder = new ConfigBuilder(packageConfig, dataSourceConfig, strategyConfig, templateConfig, globalConfig);
+        FreemarkerTemplateEngine templateEngine = new FreemarkerTemplateEngine();
+        templateEngine.setConfigBuilder(configBuilder);
+        templateEngine.init(configBuilder);
+        templateEngine.batchOutput();
+        // 设置非默认引擎
+        autoGenerator.setTemplateEngine(templateEngine);
         // 执行生成
         autoGenerator.execute();
-
     }
 
     @Override

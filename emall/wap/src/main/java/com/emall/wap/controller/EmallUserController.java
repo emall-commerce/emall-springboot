@@ -23,6 +23,7 @@ public class EmallUserController {
     @Autowired
     private EmallUserService targetService;
 
+
     /**
     * 分页查询数据
     *
@@ -91,5 +92,6 @@ public class EmallUserController {
     public BaseRes getOne(@RequestBody Wrapper<EmallUser> req){
         return new BaseRes(targetService.getOne(req));
     }
+
 
 }

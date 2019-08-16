@@ -40,7 +40,7 @@ sppringcloud Greenwich.RELEASE 版本
         emall-manager 调用user获取商城用户信息、后台用户信息，
         emall-manager 调用merchant获取商户信息
         emall-manager 通过商城用户或商户信息或商品信息调用emall-order获取订单信息
-    emall-user 维护商户merchant_user，后台用户back_user，商城用户mall_user 信息，并提供登录、修改密码，注销，冻结等功能
+    emall-user 维护商户merchant_user，后台用户manage_user，商城用户mall_user 信息，并提供登录、修改密码，注销，冻结等功能
     emall-gate 一个网关，为了拦截，转发，限流等相关操作控制
 
 
