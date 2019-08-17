@@ -23,7 +23,7 @@
         <!--引入公共包-->
         <dependency>
             <groupId>com.emall</groupId>
-            <artifactId>emall-common</artifactId>
+            <artifactId>common</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>

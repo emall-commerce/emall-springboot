@@ -25,7 +25,7 @@
         <!--引入公共包-->
         <dependency>
             <groupId>com.emall</groupId>
-            <artifactId>emall-common</artifactId>
+            <artifactId>common</artifactId>
             <version>1.0.0</version>
         </dependency>
         <!-- 增加spring-boot-actuator是为了访问/health 路径来判断服务是否健康 -->

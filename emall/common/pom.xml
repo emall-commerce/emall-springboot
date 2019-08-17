@@ -8,7 +8,7 @@
         <artifactId>emall</artifactId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>emall-common</artifactId>
+    <artifactId>common</artifactId>
     <packaging>jar</packaging>
     <dependencies>
         <!--引入hutool工具类-->
@@ -42,7 +42,7 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus</artifactId>
-            <version>3.1.1</version>
+            <version>3.1.0</version>
         </dependency>
 <!--        <dependency>-->
 <!--            <groupId>com.baomidou</groupId>-->
